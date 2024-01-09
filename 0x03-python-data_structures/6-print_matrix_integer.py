@@ -8,6 +8,6 @@ def print_matrix_integer(matrix=[[]]):
                 if items != len(matrix[rows]) - 1:
                     endspace = ''
                 else:
-                    endspace = ""
+                    endspace = ''
                 print("{:d}".format(matrix[rows][items]), end=endspace)
             print()
