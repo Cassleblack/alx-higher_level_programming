@@ -1,0 +1,68 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+Import the function:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Check that Module Doc Exists:
+    >>> m = __import__('0-add_integer').__doc__
+    >>> type(m)
+    <class 'str'>
+
+Check Module Doc string:
+    >>> len(m) > 1
+    True
+
+Check that Module Function Doc Exists:
+    >>> f = __import__('0-add_integer').add_integer.__doc__
+    >>> type(f)
+    <class 'str'>
+
+Check Module Function Doc string:
+    >>> len(f) > 1
+    True
+
+Check that function works for int and float values:
+    >>> add_integer(2, 3)
+    5
+    >>> add_integer(3.0, 4.0)
+    7
+
+Check for positive and negative values:
+    >>> add_integer(-2, 3)
+    1
+    >>> add_integer(-2, -3)
+    -5
+    >>> add_integer(2, -3)
+    -1
+
+Check that TypeError is thrown for non-int types:
+    >>> add_integer("rad", "lol")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Check for empty values:
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Check for just one value:
+    >>> add_integer(3)
+    101
+
+Check for float Nan:
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+Check for infinity:
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
